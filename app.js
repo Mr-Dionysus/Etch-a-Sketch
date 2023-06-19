@@ -25,17 +25,26 @@ gridBlocks.forEach((gridBlock) => {
 const createNewGrid = document.querySelector("button");
 
 createNewGrid.addEventListener("click", () => {
-    mainBox.replaceChildren();
-
     let newGrid = 101;
-    while (newGrid > 100) {
-        newGrid = +prompt(
-            "Write how many squares per side do you want but <= 100"
-        );
+
+    if (newGrid <= 100 && newGrid === true) {
+        mainBox.replaceChildren();
+    } else {
+        while (newGrid > 100) {
+            newGrid = +prompt(
+                "Write how many squares per side do you want but <= 100"
+            );
+            console.log(newGrid);
+        }
     }
 
     if (newGrid > 100) {
         return false;
+    }
+
+    if (newGrid <= 100 && newGrid != 0) {
+        console.log(newGrid);
+        mainBox.replaceChildren();
     }
 
     for (let i = 0; i < newGrid ** 2; i++) {

@@ -2,6 +2,8 @@ const mainBox = document.querySelector("#mainBox");
 
 for (let i = 0; i < 256; i++) {
     let gridDiv = document.createElement("div");
+    gridDiv.style.width = `${(mainBox.offsetWidth - 4) / 16}px`;
+    gridDiv.style.height = gridDiv.style.width;
     mainBox.appendChild(gridDiv);
 }
 
@@ -38,7 +40,7 @@ createNewGrid.addEventListener("click", () => {
 
     for (let i = 0; i < newGrid ** 2; i++) {
         let gridDiv = document.createElement("div");
-        gridDiv.style.width = `${mainBox.offsetWidth / newGrid}px`;
+        gridDiv.style.width = `${(mainBox.offsetWidth - 4) / newGrid}px`;
         gridDiv.style.height = gridDiv.style.width;
         mainBox.appendChild(gridDiv);
     }

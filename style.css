@@ -57,3 +57,23 @@ span {
 footer {
     margin-top: auto;
 }
+
+@media (max-width: 1170px) {
+    #mainBox {
+        width: 700px;
+    }
+}
+
+@media (max-width: 820px) {
+    button {
+        font-size: 1em;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    #mainBox {
+        width: 350px;
+    }
+}

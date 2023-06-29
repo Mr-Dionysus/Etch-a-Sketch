@@ -14,7 +14,8 @@ function randomRGB() {
     const firstColor = Math.floor(Math.random() * 255);
     const secondColor = Math.floor(Math.random() * 255);
     const thirdColor = Math.floor(Math.random() * 255);
-    return `rgb(${firstColor}, ${secondColor}, ${thirdColor})`;
+    const opacity = Math.random();
+    return `rgb(${firstColor}, ${secondColor}, ${thirdColor}, ${opacity})`;
 }
 //Change background of blocks with random color and clear all with Clear button
 gridBlocks.forEach((gridBlock) => {

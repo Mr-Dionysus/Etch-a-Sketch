@@ -1,7 +1,6 @@
 const mainBox = document.querySelector("#mainBox");
 const buttonClear = document.querySelector('button[value="clear"]');
 const spansRainbow = document.querySelectorAll("span");
-let gridBlocks = document.querySelectorAll("#mainBox div");
 //Create mini blocks for drawing
 for (let i = 0; i < 40 ** 2; i++) {
     let gridDiv = document.createElement("div");
@@ -9,6 +8,8 @@ for (let i = 0; i < 40 ** 2; i++) {
     gridDiv.style.height = gridDiv.style.width;
     mainBox.appendChild(gridDiv);
 }
+
+let gridBlocks = document.querySelectorAll("#mainBox div");
 //Return random color
 function randomRGB() {
     const firstColor = Math.floor(Math.random() * 255);
@@ -29,6 +30,7 @@ gridBlocks.forEach((gridBlock) => {
 });
 
 const buttons = document.querySelectorAll("button");
+
 setInterval(() => {
     buttons.forEach((button) => {
         button.style.background = randomRGB();

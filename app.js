@@ -1,26 +1,45 @@
 const mainBox = document.querySelector("#mainBox");
-
-for (let i = 0; i < 256; i++) {
+const buttonClear = document.querySelector('button[value="clear"]');
+//Create mini blocks for drawing
+for (let i = 0; i < 40 ** 2; i++) {
     let gridDiv = document.createElement("div");
-    gridDiv.style.width = `${(mainBox.offsetWidth - 4) / 16}px`;
+    gridDiv.style.width = `${(mainBox.offsetWidth - 4) / 40}px`;
     gridDiv.style.height = gridDiv.style.width;
     mainBox.appendChild(gridDiv);
 }
 
 let gridBlocks = document.querySelectorAll("#mainBox div");
-
+//Return random color
 function randomRGB() {
     const firstColor = Math.floor(Math.random() * 255);
     const secondColor = Math.floor(Math.random() * 255);
     const thirdColor = Math.floor(Math.random() * 255);
-    return `rgb(${firstColor},${secondColor},${thirdColor})`;
+    return `rgb(${firstColor}, ${secondColor}, ${thirdColor})`;
 }
-
+//Change background of blocks with random color and clear all with Clear button
 gridBlocks.forEach((gridBlock) => {
     gridBlock.addEventListener("mouseover", () => {
         gridBlock.style.backgroundColor = randomRGB();
     });
+
+    buttonClear.addEventListener("click", () => {
+        gridBlock.style.backgroundColor = "white";
+    });
 });
+
+const buttons = document.querySelectorAll("button");
+
+buttons.forEach((button) => {
+    button.addEventListener("mouseover", () => {
+        button.style.background = randomRGB();
+    });
+});
+
+setInterval(() => {
+    buttons.forEach((button) => {
+        button.style.background = randomRGB();
+    });
+}, 1000);
 
 const createNewGrid = document.querySelector("button");
 
@@ -34,7 +53,6 @@ createNewGrid.addEventListener("click", () => {
             newGrid = +prompt(
                 "Write how many squares per side do you want but <= 100"
             );
-            console.log(newGrid);
         }
     }
 
@@ -43,12 +61,11 @@ createNewGrid.addEventListener("click", () => {
     }
 
     if (newGrid <= 100 && newGrid != 0) {
-        console.log(newGrid);
         mainBox.replaceChildren();
     }
 
     for (let i = 0; i < newGrid ** 2; i++) {
-        let gridDiv = document.createElement("div");
+        const gridDiv = document.createElement("div");
         gridDiv.style.width = `${(mainBox.offsetWidth - 4) / newGrid}px`;
         gridDiv.style.height = gridDiv.style.width;
         mainBox.appendChild(gridDiv);
@@ -58,6 +75,10 @@ createNewGrid.addEventListener("click", () => {
     gridBlocks.forEach((gridBlock) => {
         gridBlock.addEventListener("mouseover", () => {
             gridBlock.style.backgroundColor = randomRGB();
+        });
+
+        buttonClear.addEventListener("click", () => {
+            gridBlock.style.backgroundColor = "white";
         });
     });
 });

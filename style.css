@@ -3,14 +3,15 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
+    background: #fb860075;
 }
 
 button {
-    margin: 20px 0px;
+    margin: 10px 20px;
     padding: 5px 10px;
-    border: 2px solid black;
-    border-radius: 15px;
-    font-size: 1.7em;
+    border: 2px solid rgba(0, 0, 0, 0.391);
+    border-radius: 25px;
+    font-size: 1.5em;
     background-color: white;
     transition: background-color 0.3s;
 }
@@ -22,16 +23,25 @@ button:hover {
 #mainBox {
     width: 1146px;
     box-sizing: border-box;
-    margin: auto;
+    margin: 10px auto;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     border: 2px solid black;
+    background: white;
 }
 
 #mainBox div {
     width: 70px;
     height: 70px;
     box-sizing: border-box;
+}
+
+buttons {
+    display: flex;
+}
+
+footer {
+    margin-top: auto;
 }

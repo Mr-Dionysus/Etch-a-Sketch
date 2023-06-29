@@ -1,7 +1,7 @@
 const mainBox = document.querySelector("#mainBox");
 const buttonClear = document.querySelector('button[value="clear"]');
 const spansRainbow = document.querySelectorAll("span");
-$("body").on("touchstart", function () {});
+document.addEventListener("touchstart", function () {}, true);
 //Create mini blocks for drawing
 for (let i = 0; i < 40 ** 2; i++) {
     let gridDiv = document.createElement("div");

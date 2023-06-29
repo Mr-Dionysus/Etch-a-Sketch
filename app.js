@@ -1,14 +1,14 @@
 const mainBox = document.querySelector("#mainBox");
 const buttonClear = document.querySelector('button[value="clear"]');
+const spansRainbow = document.querySelectorAll("span");
+let gridBlocks = document.querySelectorAll("#mainBox div");
 //Create mini blocks for drawing
 for (let i = 0; i < 40 ** 2; i++) {
     let gridDiv = document.createElement("div");
-    gridDiv.style.width = `${(mainBox.offsetWidth - 4) / 40}px`;
+    gridDiv.style.width = `${mainBox.offsetWidth / 40}px`;
     gridDiv.style.height = gridDiv.style.width;
     mainBox.appendChild(gridDiv);
 }
-
-let gridBlocks = document.querySelectorAll("#mainBox div");
 //Return random color
 function randomRGB() {
     const firstColor = Math.floor(Math.random() * 255);
@@ -29,18 +29,15 @@ gridBlocks.forEach((gridBlock) => {
 });
 
 const buttons = document.querySelectorAll("button");
-
-buttons.forEach((button) => {
-    button.addEventListener("mouseover", () => {
-        button.style.background = randomRGB();
-    });
-});
-
 setInterval(() => {
     buttons.forEach((button) => {
         button.style.background = randomRGB();
     });
-}, 1000);
+
+    spansRainbow.forEach((span) => {
+        span.style.background = randomRGB();
+    });
+}, 500);
 
 const createNewGrid = document.querySelector("button");
 
@@ -67,7 +64,7 @@ createNewGrid.addEventListener("click", () => {
 
     for (let i = 0; i < newGrid ** 2; i++) {
         const gridDiv = document.createElement("div");
-        gridDiv.style.width = `${(mainBox.offsetWidth - 4) / newGrid}px`;
+        gridDiv.style.width = `${mainBox.offsetWidth / newGrid}px`;
         gridDiv.style.height = gridDiv.style.width;
         mainBox.appendChild(gridDiv);
     }

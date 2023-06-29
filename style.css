@@ -9,11 +9,12 @@ body {
 button {
     margin: 10px 20px;
     padding: 5px 10px;
-    border: 2px solid rgba(0, 0, 0, 0.391);
     border-radius: 25px;
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.293);
     font-size: 1.5em;
     background-color: white;
     transition: background-color 0.3s;
+    transition: background 1s;
 }
 
 button:hover {
@@ -28,18 +29,29 @@ button:hover {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    border: 2px solid black;
     background: white;
+    transition: background 0.5s;
 }
 
 #mainBox div {
     width: 70px;
     height: 70px;
     box-sizing: border-box;
+    transition: background 0.2s;
 }
 
 buttons {
     display: flex;
+}
+
+h1 {
+    display: inline;
+    font-size: 2em;
+}
+
+span {
+    border-radius: 10px;
+    transition: background 1s;
 }
 
 footer {

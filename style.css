@@ -23,7 +23,7 @@ button:hover {
 }
 
 #mainBox {
-    width: 1146px;
+    width: 700px;
     box-sizing: border-box;
     margin: 10px auto;
     display: flex;
@@ -61,7 +61,7 @@ footer {
 
 @media (max-width: 1170px) {
     #mainBox {
-        width: 700px;
+        width: 650px;
     }
 }
 
@@ -75,6 +75,6 @@ footer {
     }
 
     #mainBox {
-        width: 350px;
+        width: 600px;
     }
 }

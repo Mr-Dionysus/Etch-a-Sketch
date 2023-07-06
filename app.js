@@ -7,6 +7,7 @@ for (let i = 0; i < 40 ** 2; i++) {
     let gridDiv = document.createElement("div");
     gridDiv.style.width = `${mainBox.offsetWidth / 40}px`;
     gridDiv.style.height = gridDiv.style.width;
+    console.log(`gridDiv.style.width = `, gridDiv.style.width);
     mainBox.appendChild(gridDiv);
 }
 
